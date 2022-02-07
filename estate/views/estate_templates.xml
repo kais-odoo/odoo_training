@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <template id="hello_world" name="Hello World">
+        <h4><strong>Hello World</strong></h4>
+    </template>
+
+    <template id="properties_list">
+        <div><t t-out="SomeAdditionalData"/></div>
+        <div class="table">
+            <table>
+                <thead>
+                    <th>Sequence</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>State</th>
+                </thead>
+                <tbody>
+                    <t t-set="sequence" t-value="0"/>
+                    <t t-foreach="properties" t-as="property">
+                        <t t-set="sequence" t-value="sequence + 1"/>
+                         <tr t-att-class="sequence % 2 == 0 and 'o_even' or ''">
+                        <tr t-attf-style="font-weight: bold;#{sequence % 2 == 0 and 'background: grey;' or ''}">
+                            <td><t t-out="sequence" /></td>
+                            <td><t t-out="property.name" /></td>
+                            <td>
+                                <t t-if="property.description" t-out="property.description" />
+                                <t t-else="">No Description Available</t>
+                            </td>
+                            <td><span t-field="property.state"/></td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+        </div>
+    </template>
+
+    <template id="hello_user" name="Bla Bla">
+        <h4><strong>Hello <t t-out="user.name"/></strong></h4>
+        <t t-call="estate.properties_list">
+            <t t-set="SomeAdditionalData">Hello</t>
+        </t>
+    </template> -->
+
+
+    <template id="property_call" name="Property">
+
+        <t t-call="website.layout">
+            <div class="container">
+                <h3 class="text-center">Real Estate Properties</h3>
+                <table class="table table-bordered mb64">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Sr.No</th>
+                            <th class="text-center">Property Name</th>
+                            <th class="text-center">Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <t t-set="seq" t-value="1"/>
+                        <t t-foreach="properties" t-as="property">
+
+                        <tr>
+                            <td>
+                                <t t-out="seq"/>
+                            </td>
+                            <td>
+                                <a  t-attf-href="/estate/#{property.id}">
+                                    <t t-out="property.name"/>
+                                </a>
+                            </td>
+
+                            <td>
+                                <t t-if="property.description" t-out="property.description"/>
+                                <t t-else="">No Description Available</t>
+                                <t t-out="property.property_type_id.name"/>
+                            </td>
+
+
+                        <t t-set="seq" t-value="seq+1"/>
+                        </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+
+    <template id="property_details" name="Property_Details">
+        <div t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <!-- <div t-attf-style="padding-top: 50%; background-image: url(/web/image/estate.property/#{property.id}/image_1024); background-size: cover; background-position:center"/> -->
+                    </div>
+                    <div class="col-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </template>
+</odoo>    

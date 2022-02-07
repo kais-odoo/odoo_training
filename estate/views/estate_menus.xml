@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="real_estate_properties_action" model="ir.actions.act_window">
+        <field name="name">Properties</field>
+        <field name="res_model">estate.property</field>
+        <field name="view_mode">tree,form,kanban,graph,pivot</field>
+        <field name="context">{'search_default_user_property':1, 'is_my_property': True}</field>
+    </record>
+    <record id="real_estate_properties_settings_action" model="ir.actions.act_window">
+        <field name="name">Property Type</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+    <record id="real_estate_properties_offer_action" model="ir.actions.act_window">
+        <field name="name">Offers</field>
+        <field name="res_model">estate.property.offer</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="domain" >[('status','=','accepted')]</field> 
+    </record>
+
+   
+
+ <menuitem id="menu_real_estate_root" name="Real Estate">
+     <menuitem id="menu_real_estate_advertisements" name="Advertisements">
+         <menuitem id="menu_real_estate_action" action="real_estate_properties_action"/>
+         <menuitem id="menu_real_estate_offers_action" action="real_estate_properties_offer_action" />
+     </menuitem>
+     <menuitem id="menu_real_estate_settings" name="Settings">
+         <menuitem id="menu_real_estate_settings_action" action="real_estate_properties_settings_action"/>
+     </menuitem>
+      
+         
+    </menuitem>
+</odoo>
+
+
