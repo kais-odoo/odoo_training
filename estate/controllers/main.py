@@ -42,9 +42,9 @@ class Estate_Property_Controller(http.Controller):
 
 
     @http.route(['/estate/<model("estate.property"):property>'], auth="public", website=True)
-    def property_details(self, **kw):
-        properties = request.env['estate.property'].search([])
-        if properties:
+    def property_details(self, property=False, **kw):
+        # properties = request.env['estate.property'].search([])
+        if property:
             return request.render('estate.property_details', {
-                'properties':properties,
+                'properties':property,
             })
