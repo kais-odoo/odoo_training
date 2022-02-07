@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<!-- 
+    <record id="estate_property_tree_inherits" model="ir.ui.view">
+        <field name="name">Estate Property Tree inherits</field>
+        <field name="model">estate.property</field>
+        <field name="inherit_id" ref="estate_property.estate_property_tree"></field>
+    </record> -->
+
+</odoo>
