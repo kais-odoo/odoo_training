@@ -20,10 +20,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Booking</a>
+                <a class="nav-link" href="/">Booking</a>
               </li>
               <!-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -40,17 +40,18 @@
                 <a class="nav-link disabled">Disabled</a>
               </li> -->
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onclick="onSearch();">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+            <form class="d-flex" id="form1_data">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search_input">
+              <button class="btn btn-outline-success" type="submit" id="search_submit">Search</button>
             </form>
           </div>
         </div>
       </nav>
 
 
-
+      
       <div class="container">
+        <marquee class="text-secondary" id="marquee_text"></marquee>
         <h1 class="text-center text-primary mt-5">Car Washing</h1>
         <form action="" method="post" id="form_data"  onsubmit="event.preventDefault();onFormSubmit();">
           <div class="mb-3 mt-5">
@@ -69,7 +70,16 @@
             <label for="contact" class="form-label">Mobile No.</label>
             <input type="text" class="form-control" id="contact" name="contact">
           </div>
+          <div class="mb-3">
+            <label for="cars">Choose a car type:</label>
+              <select class="form-select" name="cars" id="cars_type">
+                <option value="suv">SUV</option>
+                <option value="muv">MUV</option>
+                <option value="sedan">SEDAN</option>
+              </select>
+          </div>
           <button type="submit" class="btn btn-primary" id="submit">Booking</button>
+           <a class="btn btn-primary" id="reset">Reset</a>
         </form>
 
         <table class="table" id="tb_id">
@@ -79,6 +89,7 @@
               <th scope="col">Date of Booking</th>
               <th scope="col">Name</th>
               <th scope="col">Contact</th>
+              <th scope="col">Type</th>
             </tr>
           </thead>
           <tbody>

@@ -21,6 +21,8 @@ class werkzueg:
 
         self.url_map = Map([
             Rule('/', endpoint='HomePage'),
+            # Rule('/index.html', endpoint='HomePage'),
+            
             # Rule('/<short_id>', endpoint='follow_short_link'),
             # Rule('/<short_id>+', endpoint='short_link_details')
         ])
